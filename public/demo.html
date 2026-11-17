@@ -3,12 +3,22 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0b0c"><title>Null Motion</title>
-  <link rel="icon" href="assets/null-logo.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"><link rel="stylesheet" href="demo.css">
+  <link rel="icon" href="assets/null-logo.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"><link rel="stylesheet" href="demo.css"><link rel="stylesheet" href="splash.css">
   <script src="_vendor/gsap.min.js"></script>
   <script src="_vendor/mp4-muxer.js"></script>
   <script type="module" src="demo.mjs"></script>
 </head>
 <body>
+<div class="splash" id="splash" aria-hidden="true">
+  <div class="splash-glow"></div>
+  <div class="splash-rig">
+    <div class="splash-word"></div>
+    <div class="splash-track"><div class="splash-fill"></div><div class="splash-head"><span></span></div></div>
+    <div class="splash-meta"><b class="splash-clock">0:00.0</b><span>null motion</span></div>
+  </div>
+  <div class="splash-skip">Click or press any key to skip</div>
+</div>
+<script src="splash.js"></script>
 <header class="bar">
   <a class="logo" href="/">null<span>.</span></a>
   <span class="bar-meta" id="bar-meta"></span>

@@ -1,0 +1,18 @@
+/* Null Motion opening splash: an empty timeline, a playhead sweeps it, and "null." is
+   drawn behind the playhead before flying into the header logo. Plays once per tab session. */
+.splash { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: var(--bg, #0b0b0c); cursor: pointer; overflow: hidden; }
+.splash[hidden] { display: none; }
+.splashing .bar .logo { opacity: 0; }
+.splash-glow { position: absolute; left: 50%; top: 50%; width: 70vmin; height: 70vmin; margin: -35vmin 0 0 -35vmin; border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 90, 31, .16), transparent); opacity: 0; pointer-events: none; }
+.splash-rig { --sw: min(420px, 78vw); position: relative; width: var(--sw); display: flex; flex-direction: column; align-items: center; }
+.splash-word { position: relative; display: flex; align-items: baseline; font: 600 calc(var(--sw) * .3)/1 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; letter-spacing: -.045em; color: var(--text, #ededee); transform-origin: 0 50%; perspective: 600px; }
+.splash-word .ch { display: inline-block; opacity: 0; will-change: transform, opacity, filter; }
+.splash-word .dot { color: var(--accent, #ff5a1f); }
+.splash-track { position: relative; width: 100%; height: 2px; margin-top: calc(var(--sw) * .07); border-radius: 1px; background: var(--line, #222225); transform: scaleX(0); }
+.splash-fill { position: absolute; inset: 0; border-radius: 1px; background: var(--accent, #ff5a1f); transform: scaleX(0); transform-origin: 0 50%; }
+.splash-head { position: absolute; left: 0; bottom: -6px; width: 0; height: calc(var(--sw) * .44); opacity: 0; pointer-events: none; }
+.splash-head::after { content: ""; position: absolute; top: 5px; bottom: 0; left: -1px; width: 2px; border-radius: 1px; background: #fff; }
+.splash-head span { position: absolute; top: 0; left: -5px; width: 10px; height: 10px; border-radius: 50%; background: #fff; }
+.splash-meta { display: flex; justify-content: space-between; width: 100%; margin-top: 10px; font: 500 11px Inter, system-ui, sans-serif; color: var(--muted, #7d7d83); font-variant-numeric: tabular-nums; letter-spacing: .02em; opacity: 0; }
+.splash-meta b { color: var(--text, #ededee); font-weight: 500; }
+.splash-skip { position: absolute; bottom: 24px; left: 0; right: 0; text-align: center; font: 400 11px Inter, system-ui, sans-serif; color: var(--faint, #45454a); opacity: 0; }
